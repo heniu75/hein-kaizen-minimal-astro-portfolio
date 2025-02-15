@@ -8,7 +8,9 @@
     "preview": "astro build && wrangler pages dev",
     "astro": "astro",
     "deploy": "astro build && wrangler pages deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "publish": "zip -r package.zip . -x './node_modules/*' './.git/*' && wormhole send package.zip",
+    "dockerup": "docker compose up -d --build"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.1.0",
