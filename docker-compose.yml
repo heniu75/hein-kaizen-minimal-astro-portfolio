@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8300:80"
+    environment:
+      - ASTRO_TELEMETRY_DISABLED=1
+      - MY_ENV_VAR1=${VITE_SUPABASE_URL}
+      - MY_ENV_VAR2=${VITE_SUPABASE_URL}
+    restart: unless-stopped
